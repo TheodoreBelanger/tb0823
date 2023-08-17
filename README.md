@@ -1,6 +1,6 @@
 # tb0823 - Tool Rental Application
 
-##Info
+## Info
 This application can be started as a SpringBoot Web Application or a CLI application
 
 -The Application is designed to be a scalable web app or a single useage cli call
@@ -48,64 +48,68 @@ This application can be started as a SpringBoot Web Application or a CLI applica
 		Final Charge: $25.70
 	-Note: Hibrinate logs can be disabled in application.config with property spring.jpa.show-sql=true
 	
-##Documentation:
+## Documentation:
 	
 -Generated Java Docs:
 	
 --Navigate to: tb0823\src\main\resources\docs\index.html
 		
-	![JavaDocs](https://github.com/TheodoreBelanger/tb0823/assets/5751051/c939be95-cab9-43d2-a563-24e4fa024711)
+![JavaDocs](https://github.com/TheodoreBelanger/tb0823/assets/5751051/c939be95-cab9-43d2-a563-24e4fa024711)
 
 -Primary checkout Controller Method (shared by API and CLI)
 
-	![checkoutJavaDoc](https://github.com/TheodoreBelanger/tb0823/assets/5751051/82a0e387-c4ae-487f-ad3c-3a4db3320f94)
+![checkoutJavaDoc](https://github.com/TheodoreBelanger/tb0823/assets/5751051/82a0e387-c4ae-487f-ad3c-3a4db3320f94)
 
-##Swagger API Documentation:
+## Swagger API Documentation:
 	
 -When app is started as web app navigate to: http://localhost:8080/swagger-ui/index.html#/
 
-	![toolRentalServiceSwaggerApi](https://github.com/TheodoreBelanger/tb0823/assets/5751051/bcc2bab2-1b7b-48d0-9455-35111b600598)
+![toolRentalServiceSwaggerApi](https://github.com/TheodoreBelanger/tb0823/assets/5751051/bcc2bab2-1b7b-48d0-9455-35111b600598)
 	
-##Data Base:
+## Data Base:
 
 -Is implmented using an in memory H2 Database and is interfaced with via Spring JPA to stay data source agnostic
 
 -An H2 database console is avalible on app startup at: http://localhost:8080/h2-console/login.jsp
 	
-	![h2DbConsole](https://github.com/TheodoreBelanger/tb0823/assets/5751051/5df9116f-78f3-450b-a429-4bdd2ba9c1e6)
+![h2DbConsole](https://github.com/TheodoreBelanger/tb0823/assets/5751051/5df9116f-78f3-450b-a429-4bdd2ba9c1e6)
 
 
-##Extention
+## Extention
 
 -Inorder to add Tools and associated Purchase Information, edit the data.sql file found in /main/src/main/resources/data.sql
 
-	![data_sqlPNG](https://github.com/TheodoreBelanger/tb0823/assets/5751051/84b61e7a-ee4d-4124-9c43-553dcd1aa990)
+![data_sqlPNG](https://github.com/TheodoreBelanger/tb0823/assets/5751051/84b61e7a-ee4d-4124-9c43-553dcd1aa990)
 
-##Tests
+## Tests
 
 -Are avalible in /src/main/test/java/com/application.tb0823/toolrental/ToolRentalApplicationTets.java
 
 -13 tests cover input validation, customInernalRuntimeException cases, and provided required 6 tests
 
-	![requiredTestCases](https://github.com/TheodoreBelanger/tb0823/assets/5751051/9c1242e0-0ff1-488e-b407-e53e15e20750)
+![requiredTestCases](https://github.com/TheodoreBelanger/tb0823/assets/5751051/9c1242e0-0ff1-488e-b407-e53e15e20750)
 
 
 -Resuts:
+-PostManCollection is provided in /main/src/main/resources/toolApiCollection
 
 -Required Test 1 output:
-	![test1_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/2b38d97f-1ac8-4cb4-80d7-3ce0e052388a)
+![test1_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/2b38d97f-1ac8-4cb4-80d7-3ce0e052388a)
 
 -Required Test 2 output:
-	![test2_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/6e8deceb-d946-4ac7-a9b5-7710423661b2)
+![test2_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/6e8deceb-d946-4ac7-a9b5-7710423661b2)
 
 -Required Test 3 output:
-	![test3_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/afb014ec-1f5a-47d8-b0e7-233435904b24)
+![test3_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/afb014ec-1f5a-47d8-b0e7-233435904b24)
 
 -Required Test 4 output:
-	![test4_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/52286127-e21a-4a14-8c2b-172f99c2f107)
+![test4_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/52286127-e21a-4a14-8c2b-172f99c2f107)
 
 -Required Test 5 output:
-	![test5_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/50748560-1fb5-4571-aeb8-868281345938)
+![test5_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/50748560-1fb5-4571-aeb8-868281345938)
 
 -Required Test 6 output:
-	![test6_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/bda25a5d-2421-412a-bf47-d5a2af3321e7)
+![test6_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/bda25a5d-2421-412a-bf47-d5a2af3321e7)
+
+-Non Required Test showing proper format for Thousands decimal place in rental prices
+![test7_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/35412022-2974-4d79-ac06-dd27c6da0253)
