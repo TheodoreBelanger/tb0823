@@ -1,14 +1,15 @@
 # tb0823 - Tool Rental Application
+
+##Info
 This application can be started as a SpringBoot Web Application or a CLI application
 
-	The Application is designed to be a scalable web app or a single useage cli call
+-The Application is designed to be a scalable web app or a single useage cli call
 
-	All Requiremnts have been implemented
+-All Requiremnts have been implemented
 
-	Lazy loading cache is used at the repository layer to ensure fast start up time, reset-cache endpoint avalible if new data is added on the fly via H2 DB console
+-Lazy loading cache is used at the repository layer to ensure fast start up time, reset-cache endpoint avalible if new data is added on the fly via H2 DB console
 
-	Interfaces have been implemented with default constructors to ensure safe dependency injection
-
+-Interfaces have been implemented with default constructors to ensure safe dependency injection
 
 ##Usage:
 
