@@ -46,7 +46,7 @@ Documentation:
 	
 Extention
 
-	-Inorder to add Tools and associated Purchase Information edit the data.sl file found in https://github.com/TheodoreBelanger/tb0823/blob/main/src/main/resources/data.sql
+	-Inorder to add Tools and associated Purchase Information edit the data.sql file found in https://github.com/TheodoreBelanger/tb0823/blob/main/src/main/resources/data.sql
 
 ![data_sqlPNG](https://github.com/TheodoreBelanger/tb0823/assets/5751051/84b61e7a-ee4d-4124-9c43-553dcd1aa990)
 
