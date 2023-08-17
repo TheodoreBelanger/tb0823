@@ -89,27 +89,31 @@ This application can be started as a SpringBoot Web Application or a CLI applica
 
 ![requiredTestCases](https://github.com/TheodoreBelanger/tb0823/assets/5751051/9c1242e0-0ff1-488e-b407-e53e15e20750)
 
+## PostMan:
+-Postman collection is provided for making Http Requests to the Web Application in:  
+	
+	/main/src/main/resources/RESTful-API-basics-ToolRentalService.postman_collection.json
 
--Resuts:
--PostManCollection is provided in /main/src/main/resources/toolApiCollection
 
--Required Test 1 output:
+## Resuts:
+
+### Required Test 1 output:
 ![test1_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/2b38d97f-1ac8-4cb4-80d7-3ce0e052388a)
 
--Required Test 2 output:
+### Required Test 2 output:
 ![test2_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/6e8deceb-d946-4ac7-a9b5-7710423661b2)
 
--Required Test 3 output:
+### Required Test 3 output:
 ![test3_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/afb014ec-1f5a-47d8-b0e7-233435904b24)
 
--Required Test 4 output:
+### Required Test 4 output:
 ![test4_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/52286127-e21a-4a14-8c2b-172f99c2f107)
 
--Required Test 5 output:
+### Required Test 5 output:
 ![test5_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/50748560-1fb5-4571-aeb8-868281345938)
 
--Required Test 6 output:
+### Required Test 6 output:
 ![test6_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/bda25a5d-2421-412a-bf47-d5a2af3321e7)
 
--Non Required Test showing proper format for Thousands decimal place in rental prices
+### Non Required Test showing proper format for Thousands decimal place in rental prices
 ![test7_postman_output](https://github.com/TheodoreBelanger/tb0823/assets/5751051/35412022-2974-4d79-ac06-dd27c6da0253)
