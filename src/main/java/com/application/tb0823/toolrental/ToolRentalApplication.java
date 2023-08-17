@@ -30,8 +30,11 @@ public class ToolRentalApplication implements CommandLineRunner{
 	
 	private final CliToolRentalUtility cliToolRentalUtility;
 	                                           
+	
 	/**
+	 * Tool Rental Application Constructor
 	 * @param toolRentalController
+	 * @param cliToolRentalUtility
 	 */
 	public ToolRentalApplication(ToolRentalController toolRentalController, CliToolRentalUtility cliToolRentalUtility) {
 		this.toolRentalController = toolRentalController;
