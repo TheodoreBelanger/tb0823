@@ -68,17 +68,16 @@ public class RentalAgreementCalculator {
 		//start with total rental days then subtract uncharged days
 		int charableDays = rentalDayCount;
         for (int i = 1; i <= rentalDayCount; i++) {
-        	
-        	LocalDate dayIndex = checkoutDate.plusDays(i);
-        	
-        	//check weekdays
+			LocalDate dayIndex = checkoutDate.plusDays(i);
+			
+			//check weekdays
 			charableDays = subtractWeekdayNonChargableDays(toolPurchaseData, charableDays, dayIndex);
-            
-            //check weekends
+			
+			//check weekends
 			charableDays = subtractWeekendNonChargableDays(toolPurchaseData, charableDays, dayIndex);
-
+			
 			//check holidays 
-		    charableDays = subtractHolidayNonChargableDays(rentalDayCount, toolPurchaseData, charableDays, i, dayIndex);
+			charableDays = subtractHolidayNonChargableDays(rentalDayCount, toolPurchaseData, charableDays, i, dayIndex);
         }
 		return charableDays;
 	}
@@ -106,8 +105,7 @@ public class RentalAgreementCalculator {
 	 * @param dayIndex days since checkout date
 	 * @return chargeable days sans non-chargeable weekend days
 	 */
-	private int subtractWeekendNonChargableDays(ToolPurchaseData toolPurchaseData, int charableDays,
-			LocalDate dayIndex) {
+	private int subtractWeekendNonChargableDays(ToolPurchaseData toolPurchaseData, int charableDays, LocalDate dayIndex) {
 		if (!toolPurchaseData.isWeekendCharge()) {
 		    if (dayIndex.getDayOfWeek().getValue() > 5) {
 		        charableDays--;
@@ -125,8 +123,7 @@ public class RentalAgreementCalculator {
 	 * @param dayIndex day since checkout date 
 	 * @return chargeable days sans non-chargeable holidays
 	 */
-	private int subtractHolidayNonChargableDays(int rentalDayCount, ToolPurchaseData toolPurchaseData, int charableDays,
-			int i, LocalDate dayIndex) {
+	private int subtractHolidayNonChargableDays(int rentalDayCount, ToolPurchaseData toolPurchaseData, int charableDays, int i, LocalDate dayIndex) {
 		if (!toolPurchaseData.isHolidayCharge()) {
 			//4th of July
 			charableDays = checkForthOfJuly(rentalDayCount, charableDays, i, dayIndex);
