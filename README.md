@@ -36,9 +36,13 @@ Documentation:
 	
 	-Generated Java Docs:
 		-Navigate to: tb0823\src\main\resources\docs\index.html
+		
+![JavaDocs](https://github.com/TheodoreBelanger/tb0823/assets/5751051/c939be95-cab9-43d2-a563-24e4fa024711)
+
 	-Swagger API Documentation:
 		-When app is started as web app navigate to: http://localhost:8080/swagger-ui/index.html#/
 
 ![toolRentalServiceSwaggerApi](https://github.com/TheodoreBelanger/tb0823/assets/5751051/bcc2bab2-1b7b-48d0-9455-35111b600598)
 	
+Extention
 		
