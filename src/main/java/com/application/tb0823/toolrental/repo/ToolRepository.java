@@ -119,7 +119,6 @@ public class ToolRepository implements ToolRepositoryInterface {
 			    toolsHashtable.put(tool.getToolCode(), tool);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
     		log.error(e.getMessage());
 			throw new CustomDataBaseException(e.getMessage());
 		}
