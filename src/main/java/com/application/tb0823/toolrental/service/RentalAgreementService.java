@@ -68,7 +68,7 @@ public class RentalAgreementService implements RentalAgreementInterface {
 	 * @param rentalRequest user provided
 	 * @param tool internal tool data
 	 * @param toolPurchaseData  internal tool purchase data
-	 * @return
+	 * @return generated rental agreement 
 	 */
 	private RentalAgreement generateRentalAgreement(RentalRequest rentalRequest, Tool tool, ToolPurchaseData toolPurchaseData) {
 		DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(CUSTOM_DATE_PATTERN);
