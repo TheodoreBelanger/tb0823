@@ -61,12 +61,11 @@ public class CliToolRentalUtility {
 		int discountPercent = Objects.requireNonNull(Integer.parseInt(args[3]), "discountPercent cannot be null");
 		String checkoutDate = Objects.requireNonNull(args[4], "checkoutDate cannot be null");
 		
-		RentalRequest order = RentalRequest.builder()
+		return RentalRequest.builder()
 				.toolCode(toolCode)
 				.rentalDayCount(rentalDayCount)
 				.discountPercent(discountPercent)
 				.checkoutDate(checkoutDate)
 				.build();
-		return order;
 	}
 }
