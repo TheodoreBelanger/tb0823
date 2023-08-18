@@ -37,8 +37,7 @@ public class RentalAgreementCalculator {
 	 * @param calculatedNumberOfDaysToChargeCustomer chargeable days
 	 * @return percent discount as decimal
 	 */
-	public BigDecimal calculatePreDiscountCharge(ToolPurchaseData toolPurchaseData,
-			int calculatedNumberOfDaysToChargeCustomer) {
+	public BigDecimal calculatePreDiscountCharge(ToolPurchaseData toolPurchaseData, int calculatedNumberOfDaysToChargeCustomer) {
 		return toolPurchaseData.getDailyCharge()
 				.multiply(BigDecimal.valueOf(calculatedNumberOfDaysToChargeCustomer))
 				.setScale(2, RoundingMode.UP);
