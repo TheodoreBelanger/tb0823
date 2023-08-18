@@ -109,14 +109,12 @@ public class RentalAgreementService implements RentalAgreementInterface {
 	 * @return localDate parsed
 	 */
 	private LocalDate parseCheckoutDate(RentalRequest rentalRequest, DateTimeFormatter DATE_TIME_FORMATTER) {
-		LocalDate checkoutDate = null;
 		try {
-			checkoutDate = LocalDate.parse(rentalRequest.getCheckoutDate(), DATE_TIME_FORMATTER);
+			return LocalDate.parse(rentalRequest.getCheckoutDate(), DATE_TIME_FORMATTER);
 		} catch (DateTimeParseException e) {
 			log.error(e.getMessage());
 			throw new DateParseException(e.getMessage());
 		}
-		return checkoutDate;
 	}
 	
 }
