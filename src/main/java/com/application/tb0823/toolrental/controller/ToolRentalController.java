@@ -33,45 +33,45 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ToolRentalController {
 
-	//safe dependency injection via constructor
-	private final RentalAgreementInterface rentalAgreementService;
-	
-	//Special Case of repo in controller, used to reset cache directly in-order to keep service unaware
-	private final ToolRepositoryInterface toolRepository;
-	
-	/**
-	 * Constructor
-	 * @param rentalAgreementServiceInterface
-	 * @param toolRepositoryInterface
-	 */
-	public ToolRentalController(RentalAgreementInterface rentalAgreementService, ToolRepositoryInterface toolRepository) {
-		this.rentalAgreementService = rentalAgreementService;
-		this.toolRepository = toolRepository;
-	}
+    //safe dependency injection via constructor
+    private final RentalAgreementInterface rentalAgreementService;
+    
+    //Special Case of repo in controller, used to reset cache directly in-order to keep service unaware
+    private final ToolRepositoryInterface toolRepository;
+    
+    /**
+     * Constructor
+     * @param rentalAgreementServiceInterface
+     * @param toolRepositoryInterface
+     */
+    public ToolRentalController(RentalAgreementInterface rentalAgreementService, ToolRepositoryInterface toolRepository) {
+        this.rentalAgreementService = rentalAgreementService;
+        this.toolRepository = toolRepository;
+    }
 
-	/**
-	 * Primary checkout method for Tool Rental App
-	 * @param rentalRequest to checkout
-	 * @return rental agreement or user friendly error handled by global exception handler
-	 */
-	@RequestMapping(path ="/checkout", method = POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
-	public RentalAgreement checkout(@Valid @ModelAttribute RentalRequest rentalRequest) {
-		log.info("/checkout called with RentalRequest:" + System.lineSeparator() + rentalRequest);
+    /**
+     * Primary checkout method for Tool Rental App
+     * @param rentalRequest to checkout
+     * @return rental agreement or user friendly error handled by global exception handler
+     */
+    @RequestMapping(path ="/checkout", method = POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
+    public RentalAgreement checkout(@Valid @ModelAttribute RentalRequest rentalRequest) {
+        log.info("/checkout called with RentalRequest:" + System.lineSeparator() + rentalRequest);
 
-		RentalAgreement rentalAgreement = rentalAgreementService.processRental(rentalRequest);
-		
-		log.info("/checkout returning RentalAgreement: " + System.lineSeparator() + rentalAgreement);
-		return rentalAgreement;
-	}
-	
-	/**
-	 * Used to reset Repo Cache of Tool and associated Purchase data
-	 * Use when new tool and associated purchase data is added to the App
-	 */
-	@RequestMapping(path = "/reset-tool-cache", method = GET)
-	public void resetToolCache() {
-	  // Clear the tool & purchaseData cache.
-	  toolRepository.clearCache();
-	}
-	
+        RentalAgreement rentalAgreement = rentalAgreementService.processRental(rentalRequest);
+        
+        log.info("/checkout returning RentalAgreement: " + System.lineSeparator() + rentalAgreement);
+        return rentalAgreement;
+    }
+    
+    /**
+     * Used to reset Repo Cache of Tool and associated Purchase data
+     * Use when new tool and associated purchase data is added to the App
+     */
+    @RequestMapping(path = "/reset-tool-cache", method = GET)
+    public void resetToolCache() {
+      // Clear the tool & purchaseData cache.
+      toolRepository.clearCache();
+    }
+    
 }

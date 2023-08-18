@@ -25,19 +25,19 @@ import lombok.ToString;
 @Data
 @ToString
 public class ToolPurchaseData {
-	@Id
-	@Column(name="toolType", nullable = false)
-	private String toolType;
-	
-	@Column(name="dailyCharge", nullable = false)
-	private BigDecimal dailyCharge;
-	
-	@Column(name="weekdayCharge", nullable = false)
-	private boolean weekdayCharge;
-	
-	@Column(name="weekendCharge", nullable = false)
-	private boolean weekendCharge;
-	
-	@Column(name="holidayCharge", nullable = false)
-	private boolean holidayCharge;
+    @Id
+    @Column(name="toolType", nullable = false)
+    private String toolType;
+    
+    @Column(name="dailyCharge", nullable = false)
+    private BigDecimal dailyCharge;
+    
+    @Column(name="weekdayCharge", nullable = false)
+    private boolean weekdayCharge;
+    
+    @Column(name="weekendCharge", nullable = false)
+    private boolean weekendCharge;
+    
+    @Column(name="holidayCharge", nullable = false)
+    private boolean holidayCharge;
 }

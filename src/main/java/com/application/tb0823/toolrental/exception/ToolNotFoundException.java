@@ -6,25 +6,25 @@ package com.application.tb0823.toolrental.exception;
  */
 public class ToolNotFoundException extends RuntimeException {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8108662940892488993L;
-	
-	/**
-	 * Default constructor
-	 */
-	public ToolNotFoundException() {
-		super();
-	}
-	
-	
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 8108662940892488993L;
+    
+    /**
+     * Default constructor
+     */
+    public ToolNotFoundException() {
+        super();
+    }
+    
+    
     /**
      * Constructor with message
      * @param message error context
      */
     public ToolNotFoundException(String message) {
-    	super(message);
+        super(message);
     }
 
 }

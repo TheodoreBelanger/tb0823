@@ -24,14 +24,14 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Tool {
-	
-	@Id
-	@Column(name="toolCode", nullable = false, length = 255)
-	private String toolCode;
-	
-	@Column(name="toolType", nullable = false, length = 255)
-	private String toolType;
-	
-	@Column(name="brand", nullable = false, length = 255)
-	private String brand;
+    
+    @Id
+    @Column(name="toolCode", nullable = false, length = 255)
+    private String toolCode;
+    
+    @Column(name="toolType", nullable = false, length = 255)
+    private String toolType;
+    
+    @Column(name="brand", nullable = false, length = 255)
+    private String brand;
 }

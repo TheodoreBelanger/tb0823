@@ -14,8 +14,8 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 public class RentalAgreement {
-	
-	private final String toolCode;
+    
+    private final String toolCode;
     private final String toolType;
     private final String toolBrand;
     private final int rentalDays;
@@ -32,18 +32,18 @@ public class RentalAgreement {
      * To string method
      */
     @Override
-	public String toString() {
-		return  "Tool Code: " + toolCode + System.lineSeparator() + 
-				"Tool Type: " + toolType + System.lineSeparator() +
-				"Tool Brand: " + toolBrand + System.lineSeparator() +
-				"Rental Days: " + rentalDays + System.lineSeparator() +
-				"Checkout Date: " + checkoutDate + System.lineSeparator() +
-				"Due Date: " + dueDate +  System.lineSeparator() +
-				"Daily Rental Charge: " + dailyRentalCharge + System.lineSeparator() +
-				"Charge Days: " + chargeDays + System.lineSeparator() + 
-				"PreDiscount Charge: " + preDiscountCharge + System.lineSeparator() +
-				"Discount Percent: " + discountPercent + System.lineSeparator() +
-				"Discount Amount: " + discountAmount + System.lineSeparator() +
-				"Final Charge: " + finalCharge + System.lineSeparator();
-	}
+    public String toString() {
+        return  "Tool Code: " + toolCode + System.lineSeparator() + 
+                "Tool Type: " + toolType + System.lineSeparator() +
+                "Tool Brand: " + toolBrand + System.lineSeparator() +
+                "Rental Days: " + rentalDays + System.lineSeparator() +
+                "Checkout Date: " + checkoutDate + System.lineSeparator() +
+                "Due Date: " + dueDate +  System.lineSeparator() +
+                "Daily Rental Charge: " + dailyRentalCharge + System.lineSeparator() +
+                "Charge Days: " + chargeDays + System.lineSeparator() + 
+                "PreDiscount Charge: " + preDiscountCharge + System.lineSeparator() +
+                "Discount Percent: " + discountPercent + System.lineSeparator() +
+                "Discount Amount: " + discountAmount + System.lineSeparator() +
+                "Final Charge: " + finalCharge + System.lineSeparator();
+    }
 }

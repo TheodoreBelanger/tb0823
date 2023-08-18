@@ -24,21 +24,21 @@ import lombok.extern.slf4j.Slf4j;
 @Setter
 public class ToolRepository implements ToolRepositoryInterface {
 
-	private Hashtable<String, Tool> toolsTable;
-	private Hashtable<String, ToolPurchaseData> toolPurchaseDataTable;
+    private Hashtable<String, Tool> toolsTable;
+    private Hashtable<String, ToolPurchaseData> toolPurchaseDataTable;
     
-	private final ToolDao toolDao;
-	private final ToolPurchaseDataDao toolPurchaseDataDao;
+    private final ToolDao toolDao;
+    private final ToolPurchaseDataDao toolPurchaseDataDao;
     
-	/**
-	 * Tool Repository Constructor
-	 * @param toolPurchaseDataDao Data Access Object for tool purchase data
-	 * @param toolDao Data Access Object for tool data
-	 */
-	public ToolRepository(ToolPurchaseDataDao toolPurchaseDataDao, ToolDao toolDao) {
-		this.toolDao = toolDao;
-		this.toolPurchaseDataDao = toolPurchaseDataDao;
-		toolsTable = null;
+    /**
+     * Tool Repository Constructor
+     * @param toolPurchaseDataDao Data Access Object for tool purchase data
+     * @param toolDao Data Access Object for tool data
+     */
+    public ToolRepository(ToolPurchaseDataDao toolPurchaseDataDao, ToolDao toolDao) {
+        this.toolDao = toolDao;
+        this.toolPurchaseDataDao = toolPurchaseDataDao;
+        toolsTable = null;
         toolPurchaseDataTable = null;
     }
 
@@ -48,13 +48,13 @@ public class ToolRepository implements ToolRepositoryInterface {
      * @return tool found in internal list of tools
      */
     @Override
-	public Tool getTool(String toolCode) {
+    public Tool getTool(String toolCode) {
         if (getToolsTable().containsKey(toolCode)) {
             return getToolsTable().get(toolCode);
         } else {
-        	String errorString = "Request Error: Tool with tool code " + toolCode + " not found";
-    		log.error(errorString);
-	        throw new ToolNotFoundException(errorString);
+            String errorString = "Request Error: Tool with tool code " + toolCode + " not found";
+            log.error(errorString);
+            throw new ToolNotFoundException(errorString);
         }
     }
 
@@ -64,13 +64,13 @@ public class ToolRepository implements ToolRepositoryInterface {
      * @return toolPurchaseData
      */
     @Override
-	public ToolPurchaseData getToolPurchaseData(String toolType) {
+    public ToolPurchaseData getToolPurchaseData(String toolType) {
         if (getToolPurchaseDataTable().containsKey(toolType)) {
             return getToolPurchaseDataTable().get(toolType);
         } else {
-        	String errorString = "Server Error: ToolPurchaseData with tool code " + toolType + " not found";
-    		log.error(errorString);
-        	throw new ToolPurchaseDataNotFoundException(errorString);
+            String errorString = "Server Error: ToolPurchaseData with tool code " + toolType + " not found";
+            log.error(errorString);
+            throw new ToolPurchaseDataNotFoundException(errorString);
         }
     }
     
@@ -79,70 +79,69 @@ public class ToolRepository implements ToolRepositoryInterface {
      */
     @Override
     public void clearCache() {
-		toolsTable = null;
+        toolsTable = null;
         toolPurchaseDataTable = null;
-	}
-    
+    }
     
     /**
      * lazy load enabled getter for tools table
      * @return tools table
      */
     private Hashtable<String, Tool> getToolsTable() {
-		if(toolsTable == null) {
-			toolsTable = loadToolsTable();
-		}
-    	return toolsTable;
-	}
+        if(toolsTable == null) {
+            toolsTable = loadToolsTable();
+        }
+        return toolsTable;
+    }
     
     /**
      * lazy load enabled getter for tool purchase data table
      * @return tool purchase data table
      */
     private Hashtable<String, ToolPurchaseData> getToolPurchaseDataTable() {
-		if(toolPurchaseDataTable == null) {
-			toolPurchaseDataTable = loadToolPurchaseDataTable();
-		}
-		return toolPurchaseDataTable;
-	}
+        if(toolPurchaseDataTable == null) {
+            toolPurchaseDataTable = loadToolPurchaseDataTable();
+        }
+        return toolPurchaseDataTable;
+    }
     
     /**
      * reload tools data from data source
      * @return new loaded tools table from data source
      */
     private Hashtable<String, Tool> loadToolsTable() {
-		
-		Hashtable<String, Tool> toolsHashtable = new Hashtable<>();
+        
+        Hashtable<String, Tool> toolsHashtable = new Hashtable<>();
 
-		try {
-			for (Tool tool : toolDao.findAll()) {
-			    toolsHashtable.put(tool.getToolCode(), tool);
-			}
-		} catch (Exception e) {
-    		log.error(e.getMessage());
-			throw new CustomDataBaseException(e.getMessage());
-		}
+        try {
+            for (Tool tool : toolDao.findAll()) {
+                toolsHashtable.put(tool.getToolCode(), tool);
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            throw new CustomDataBaseException(e.getMessage());
+        }
 
-		return toolsHashtable;
-	}
-	
-	/**
-	 * reload tool purchase data from data source
-	 * @return new loaded tool purchase data table from data source
-	 */
-	private Hashtable<String, ToolPurchaseData> loadToolPurchaseDataTable() {
-		 
-		Hashtable<String,ToolPurchaseData> tmpToolPurchaseDataTable = new Hashtable<String,ToolPurchaseData>();
+        return toolsHashtable;
+    }
+    
+    /**
+     * reload tool purchase data from data source
+     * @return new loaded tool purchase data table from data source
+     */
+    private Hashtable<String, ToolPurchaseData> loadToolPurchaseDataTable() {
+         
+        Hashtable<String,ToolPurchaseData> tmpToolPurchaseDataTable = new Hashtable<String,ToolPurchaseData>();
 
-		try {
-			for (ToolPurchaseData toolPurchaseData : toolPurchaseDataDao.findAll()) {
-				tmpToolPurchaseDataTable.put(toolPurchaseData.getToolType(), toolPurchaseData);
-			}
-		} catch (Exception e) {
-    		log.error(e.getMessage());
-			throw new CustomDataBaseException(e.getMessage());
-		}
+        try {
+            for (ToolPurchaseData toolPurchaseData : toolPurchaseDataDao.findAll()) {
+                tmpToolPurchaseDataTable.put(toolPurchaseData.getToolType(), toolPurchaseData);
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            throw new CustomDataBaseException(e.getMessage());
+        }
 
-		return tmpToolPurchaseDataTable;
-	}
+        return tmpToolPurchaseDataTable;
+    }
 }

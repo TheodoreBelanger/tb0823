@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ErrorResponse {
-	// customizing timestamp serialization format
+    // customizing timestamp serialization format
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private Date timestamp;
 
