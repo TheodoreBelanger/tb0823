@@ -49,9 +49,9 @@ public class RentalAgreementService implements RentalAgreementInterface {
 	}
 
 	/**
-	 * Method to process tool rentals 
+	 * Method to process tool rentals "Checkout" 
 	 * @param rentalRequest
-	 * @return
+	 * @return generated rental agreement
 	 */
 	@Override
 	public RentalAgreement processRental(RentalRequest rentalRequest) {
