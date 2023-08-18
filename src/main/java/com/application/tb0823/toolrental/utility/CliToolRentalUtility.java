@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.application.tb0823.toolrental.utility;
 
 import java.util.Objects;
