@@ -8,7 +8,7 @@ public interface RentalAgreementInterface {
 	/**
 	 * Method to process tool rentals 
 	 * @param rentalRequest
-	 * @return
+	 * @return generated rental agreement
 	 */
 	RentalAgreement processRental(RentalRequest rentalRequest);
 

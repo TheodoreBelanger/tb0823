@@ -25,10 +25,10 @@ import lombok.extern.slf4j.Slf4j;
 public class ToolRepository implements ToolRepositoryInterface {
 
 	private Hashtable<String, Tool> toolsTable;
-    private Hashtable<String, ToolPurchaseData> toolPurchaseDataTable;
+	private Hashtable<String, ToolPurchaseData> toolPurchaseDataTable;
     
-    private final ToolDao toolDao;
-    private final ToolPurchaseDataDao toolPurchaseDataDao;
+	private final ToolDao toolDao;
+	private final ToolPurchaseDataDao toolPurchaseDataDao;
     
 	/**
 	 * Tool Repository Constructor
